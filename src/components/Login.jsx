@@ -9,6 +9,7 @@ const Login = () => {
 
   const [emailId, setEmailId] = useState("saurabh@gmail.com");
   const [password, setPassword] = useState("Saurabh@123");
+  const [error, setError]=useState("");
   const dispatch= useDispatch();
   const navigate= useNavigate();
 
@@ -25,7 +26,8 @@ const Login = () => {
     return navigate("/");
     }
     catch (err){
-      console.log(err);
+      setError(err?.response?.data||" somethig went wrong");
+      
     }
   }
   return (
@@ -47,6 +49,7 @@ const Login = () => {
  
   </fieldset>
     </div>
+    <p className="text-red-700">{error} </p>
     <div className="card-actions justify-center">
       <button className="btn btn-primary" onClick={handleLogin}>Login</button>
     </div>
