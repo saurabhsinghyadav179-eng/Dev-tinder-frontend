@@ -25,7 +25,6 @@ const Body = () => {
       console.error(err);
      
     }
-    
   }
 
   useEffect(() => {

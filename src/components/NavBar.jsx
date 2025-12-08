@@ -17,8 +17,9 @@ const handleLogout = async () => {
       {},
       { withCredentials: true }
     );
-    dispatch(removeUser(res.data));
+    dispatch(removeUser());
     navigate("/login")
+    
   }catch(err){
      res.status(404).send("error ")
   }
@@ -30,7 +31,7 @@ const handleLogout = async () => {
       </div>
 
       <div className="flex gap-2">
-        {user && (
+        {user&& (
           <div className="dropdown dropdown-end">
             <p> Welcome, {user?.userData?.firstName}
             </p>
@@ -42,7 +43,7 @@ const handleLogout = async () => {
             >
               <div className="w-10 rounded-full">
                 <img
-                   alt="user photo" src={user?.userData?.image} />
+                   alt="" src={user?.userData?.image} />
               </div>
             </div>
 
