@@ -31,7 +31,7 @@ const handleLogout = async () => {
       </div>
 
       <div className="flex gap-2">
-        {user&& (
+        {user.userData&& (
           <div className="dropdown dropdown-end">
             <p> Welcome, {user?.userData?.firstName}
             </p>
@@ -55,7 +55,10 @@ const handleLogout = async () => {
                 <Link to="/profile">Profile</Link>
               </li>
               <li>
-                <a>Settings</a>
+              <Link to = "/connections">Connections</Link>
+              </li>
+              <li>
+              <Link to = "/requests">Requests</Link>
               </li>
               <li>
                 <a onClick={handleLogout}>Logout</a>
