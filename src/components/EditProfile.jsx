@@ -7,7 +7,7 @@ import UserCard from './UserCard';
 import { useDispatch } from 'react-redux';
 
 const EditProfile = ({user}) => {
- console.log(user.userData);
+//  console.log(user.userData);
 
   const [firstName, setfirstName] = useState(user.userData?.firstName||"");
   const [lastName, setlastName] = useState(user.userData?.lastName||"");
@@ -40,7 +40,7 @@ const EditProfile = ({user}) => {
      setTimeout(()=>{
         settoast(false);
      } ,1000);
-    console.log(res.data);
+    // console.log(res.data);
     
   
     }
@@ -49,7 +49,9 @@ const EditProfile = ({user}) => {
       
     }
   }
+  
   return (
+
     <>
      <div className='flex justify-center my-10'>
      <div className="min-h-screen flex justify-center   ">
@@ -92,7 +94,7 @@ const EditProfile = ({user}) => {
 </div>
     </div>
 
-    <UserCard  user={{firstName, lastName,  age,  gender ,image,  about,}}/>
+    <UserCard  user={{firstName, lastName,  age,  gender ,image,  about}}/>
     </div>  
    {toast&&
    (<div className="toast toast-top toast-center">

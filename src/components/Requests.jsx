@@ -19,7 +19,7 @@ const requests = useSelector(
            
         );
         dispatch(removeRequest(_id));
-        console.log(res.data.data);
+        // console.log(res.data.data);
     
     }catch(err){
         console.log(err.message);
@@ -33,7 +33,7 @@ const fetchRequests =async ()=>{
         { withCredentials: true }
       );
       dispatch(addRequests(res.data.data));
-      console.log(res.data.data);
+    //   console.log(res.data.data);
 
     }catch(err){
         console.log(err.message);
